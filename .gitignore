@@ -1,0 +1,24 @@
+# Private working notes, our discussion, plans, the course handout — never published
+archive/
+
+# Secrets (API keys live in .env, never in the notebook)
+.env
+.env.*
+!.env.example
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+
+# Model / embedding caches
+.cache/
+cache/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
