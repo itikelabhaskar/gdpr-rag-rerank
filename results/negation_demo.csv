@@ -1,0 +1,9 @@
+pair,variant,query,chunk_id,bi_cosine,ce_score,query_pair_cosine
+breach,positive,when does a company have to tell people about a data breach?,art34.1,0.4007623493671417,1.2438328266143799,0.9263675808906555
+breach,positive,when does a company have to tell people about a data breach?,art34.3,0.2992866337299347,-0.5258579254150391,0.9263675808906555
+breach,not,when does a company not have to tell people about a data breach?,art34.1,0.3839598596096039,-0.00115966796875,0.9263675808906555
+breach,not,when does a company not have to tell people about a data breach?,art34.3,0.30450156331062317,0.8221738338470459,0.9263675808906555
+erasure,positive,when do i have the right to have my data erased?,art17.1,0.5894787311553955,4.46599817276001,0.9623492956161499
+erasure,positive,when do i have the right to have my data erased?,art17.3,0.38262200355529785,-8.144028663635254,0.9623492956161499
+erasure,not,when do i not have the right to have my data erased?,art17.1,0.5649380683898926,3.4854278564453125,0.9623492956161499
+erasure,not,when do i not have the right to have my data erased?,art17.3,0.37780267000198364,-8.589943885803223,0.9623492956161499

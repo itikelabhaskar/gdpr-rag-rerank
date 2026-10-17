@@ -1,0 +1,949 @@
+# proposed answer judgements for checkpoint e, based on the cached answers and their own passages
+# answer_sha binds each judgement to results/answers.csv; do not regenerate that cache
+# a partial fact is missing, a contradicted fact is wrong; materially omitted conditions are not supplied by citations
+# an unambiguous yes/no can state a single proposition already explicit in the question
+# these are assistant-proposed labels, not independent human grading; borderline calls are in note
+- set: eval
+  query_id: kt01
+  pipeline: baseline
+  answer_sha: 66abd0889d56
+  facts:
+  - stated
+  - missing
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: parental authorisation below the applicable age is omitted
+- set: eval
+  query_id: kt01
+  pipeline: rerank
+  answer_sha: 66abd0889d56
+  facts:
+  - stated
+  - missing
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: parental authorisation below the applicable age is omitted
+- set: eval
+  query_id: kt02
+  pipeline: rerank
+  answer_sha: 9e9ff97b8cdc
+  facts:
+  - stated
+  - missing
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: deadline and delay reasons stated; unlikely-risk exception omitted
+- set: eval
+  query_id: kt02
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: kt03
+  pipeline: baseline
+  answer_sha: 417ef0e29d3f
+  facts:
+  - stated
+  - stated
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: liability for damage answers compensation in the question context; both liability limits are stated
+- set: eval
+  query_id: kt03
+  pipeline: rerank
+  answer_sha: 9cfa887abc4e
+  facts:
+  - stated
+  - stated
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: liability for damage answers compensation in the question context; both liability limits are stated
+- set: eval
+  query_id: kt04
+  pipeline: rerank
+  answer_sha: a3c11f55bf88
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: true
+  refused: false
+  truncated: false
+  overall: wrong
+  note: one-month claim is partial; art12.4 concerns not taking action and does not authorise the claimed extension;
+    complexity, two further months and notice are absent
+- set: eval
+  query_id: kt04
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ex01
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ex01
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ex02
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ex02
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ex03
+  pipeline: baseline
+  answer_sha: a829d4ac636a
+  facts:
+  - stated
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: eval
+  query_id: ex03
+  pipeline: rerank
+  answer_sha: 9bf7c6023435
+  facts:
+  - stated
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: additional safeguard examples are supported by rec108
+- set: eval
+  query_id: ex04
+  pipeline: rerank
+  answer_sha: 157b7aae8da9
+  facts:
+  - stated
+  - missing
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: fragment states the other-source information timing; impossibility exception and protective measures omitted
+- set: eval
+  query_id: ex04
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ng01
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ng01
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: ng02
+  pipeline: rerank
+  answer_sha: c1b515f6297f
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: No answers the headline but does not state the derogation or any of its conditions
+- set: eval
+  query_id: ng02
+  pipeline: baseline
+  answer_sha: c1b515f6297f
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: No answers the headline but does not state the derogation or any of its conditions
+- set: eval
+  query_id: ng03
+  pipeline: baseline
+  answer_sha: 1f9facc9015b
+  facts:
+  - stated
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: eval
+  query_id: ng03
+  pipeline: rerank
+  answer_sha: 15e81803c4c8
+  facts:
+  - stated
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: eval
+  query_id: ng04
+  pipeline: rerank
+  answer_sha: 26eec7a8acab
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: unambiguous No states the exact proposition asked about dismissal or penalties for GDPR tasks
+- set: eval
+  query_id: ng04
+  pipeline: baseline
+  answer_sha: 26eec7a8acab
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: unambiguous No states the exact proposition asked about dismissal or penalties for GDPR tasks
+- set: eval
+  query_id: bd01
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: bd01
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: bd02
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: bd02
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: bd03
+  pipeline: baseline
+  answer_sha: a21a82dbe9e1
+  facts:
+  - wrong
+  - missing
+  - missing
+  unsupported: true
+  refused: false
+  truncated: false
+  overall: wrong
+  note: opening permission is not supported by art22.3; exceptions and contract/consent scope are left as unresolved
+    paragraph references
+- set: eval
+  query_id: bd03
+  pipeline: rerank
+  answer_sha: 4119f8b52244
+  facts:
+  - stated
+  - missing
+  - wrong
+  unsupported: true
+  refused: false
+  truncated: false
+  overall: wrong
+  note: general right stated, exceptions omitted; human intervention is overgeneralised beyond the contract/consent cases
+- set: eval
+  query_id: bd04
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: eval
+  query_id: bd04
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s01
+  pipeline: baseline
+  answer_sha: 4763bdeb9f61
+  facts:
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: 72 hours given, but awareness trigger, without undue delay and where feasible are omitted
+- set: stress
+  query_id: s01
+  pipeline: rerank
+  answer_sha: d346645a9814
+  facts:
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: 72 hours given, but awareness trigger, without undue delay and where feasible are omitted
+- set: stress
+  query_id: s02
+  pipeline: rerank
+  answer_sha: 55a9e60fffc5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: first-copy free rule is not explicitly stated; additional fee omits reasonable and administrative-cost limits
+- set: stress
+  query_id: s02
+  pipeline: baseline
+  answer_sha: 91a715cc7b22
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: first-copy free rule is not explicitly stated; additional fee omits administrative-cost basis
+- set: stress
+  query_id: s03
+  pipeline: baseline
+  answer_sha: 454f75bb6969
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: stress
+  query_id: s03
+  pipeline: rerank
+  answer_sha: 454f75bb6969
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: stress
+  query_id: s04
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s04
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s05
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s05
+  pipeline: rerank
+  answer_sha: 2a6cd642d3e2
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: marketing-only statement is grounded in art21.3 but does not answer the general objection rule or its exceptions;
+    introductory Yes is ambiguous
+- set: stress
+  query_id: s06
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s06
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s07
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s07
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s08
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s08
+  pipeline: baseline
+  answer_sha: 014e22572ed1
+  facts:
+  - wrong
+  unsupported: true
+  refused: false
+  truncated: false
+  overall: wrong
+  note: Yes says erasure still applies, contradicting its own cited public-health exception; point citation is not recognised
+    by the frozen exact-label parser
+- set: stress
+  query_id: s09
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s09
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s10
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s10
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s11
+  pipeline: baseline
+  answer_sha: 26eec7a8acab
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: No unambiguously answers the instruction prohibition asked in the question
+- set: stress
+  query_id: s11
+  pipeline: rerank
+  answer_sha: 26eec7a8acab
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: No unambiguously answers the instruction prohibition asked in the question
+- set: stress
+  query_id: s12
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s12
+  pipeline: baseline
+  answer_sha: ad2399e8ab57
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: stress
+  query_id: s13
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s13
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s14
+  pipeline: rerank
+  answer_sha: 35988a634621
+  facts:
+  - stated
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: Yes answers the right-to-remedy proposition; three-month condition not stated
+- set: stress
+  query_id: s14
+  pipeline: baseline
+  answer_sha: 35988a634621
+  facts:
+  - stated
+  - missing
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: Yes answers the right-to-remedy proposition; three-month condition not stated
+- set: stress
+  query_id: s15
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s15
+  pipeline: rerank
+  answer_sha: c67d4062344a
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: Yes states the permission asked; law/collective-agreement mechanisms are not expanded; minimal binary answer
+    accepted
+- set: stress
+  query_id: s16
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s16
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s17
+  pipeline: baseline
+  answer_sha: 479d3fa66a8c
+  facts:
+  - missing
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: incomplete
+  note: not banned is read as not absolutely banned; the general prohibition is not stated; consent is an illustrative
+    example in this stress fact, not separately required
+- set: stress
+  query_id: s17
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s18
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s18
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s19
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s19
+  pipeline: rerank
+  answer_sha: 0482508288be
+  facts:
+  - wrong
+  unsupported: true
+  refused: false
+  truncated: false
+  overall: wrong
+  note: art57.4 authorises supervisory authorities, not the company asked about; the answer transfers the power to the
+    wrong role
+- set: stress
+  query_id: s20
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s20
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s21
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: no registered support for a complete answer in the supplied passages
+- set: stress
+  query_id: s21
+  pipeline: rerank
+  answer_sha: e73f156ae826
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: all three conditions given; point-level citations refer to the supplied art34.3 despite being omitted by the
+    frozen exact-label parser
+- set: stress
+  query_id: s22
+  pipeline: rerank
+  answer_sha: 76a666809cb7
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: No answers the deceased-person scope proposition; parenthetical Member State option not expanded
+- set: stress
+  query_id: s22
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s23
+  pipeline: baseline
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s23
+  pipeline: rerank
+  answer_sha: 2b8e019b64f5
+  facts:
+  - missing
+  unsupported: false
+  refused: true
+  truncated: false
+  overall: refused
+  note: refused despite registered support in its top three passages
+- set: stress
+  query_id: s24
+  pipeline: rerank
+  answer_sha: e82f3c439aae
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''
+- set: stress
+  query_id: s24
+  pipeline: baseline
+  answer_sha: e82f3c439aae
+  facts:
+  - stated
+  unsupported: false
+  refused: false
+  truncated: false
+  overall: correct
+  note: ''

@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T21:36:42",
+  "ran_at": "2026-10-17T22:00:06",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,7 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 2.7
+    "build_seconds": 3.83
   },
   "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
   "eval_set": {
@@ -66,5 +66,21 @@
     "file": "data/stress_queries.yaml",
     "sha256": "47415a125fa5d27a69b1fdedad699f518994c5c19c8624861ad48e0ee2860e36",
     "queries": 24
-  }
+  },
+  "answer_labels": {
+    "file": "data/answer_labels.yaml",
+    "answers": 80,
+    "sha256": "d79f0fd71a91004ed6887ecd200fbe4a8979bee2454eb0cd7cf63751555e4e52",
+    "status": "proposed for checkpoint e review"
+  },
+  "showcases": [
+    "eval/kt02",
+    "stress/s02",
+    "stress/s18",
+    "stress/s21",
+    "stress/s15",
+    "stress/s17",
+    "eval/ex01",
+    "stress/s13"
+  ]
 }
