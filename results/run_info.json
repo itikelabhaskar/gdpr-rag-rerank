@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T22:11:25",
+  "ran_at": "2026-10-17T22:20:59",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,7 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 2.74
+    "build_seconds": 3.86
   },
   "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
   "eval_set": {
@@ -70,7 +70,7 @@
   "answer_labels": {
     "file": "data/answer_labels.yaml",
     "answers": 80,
-    "sha256": "d79f0fd71a91004ed6887ecd200fbe4a8979bee2454eb0cd7cf63751555e4e52",
+    "sha256": "068ac7cc117f518e4ae8b78fbe0829aeec4b897054a2d5e40683015c94618e75",
     "status": "proposed for checkpoint e review"
   },
   "showcases": [
@@ -92,18 +92,18 @@
     "ollama_placement": "24%/76% CPU/GPU",
     "generation_order": "alternates by query",
     "cache_state": "warm model; prefix reuse allowed; raw prompt counters retained",
-    "rerank_over_baseline_retrieval_pct": 195.90317529500126,
-    "rerank_fraction_of_rerank_end_to_end_pct": 0.3731265403721824
+    "rerank_over_baseline_retrieval_pct": 335.6415653998284,
+    "rerank_fraction_of_rerank_end_to_end_pct": 0.24385141081862588
   },
   "scaling": {
     "measured_chunks": 607,
     "queries": 16,
     "batch_size": 32,
     "warmup_pairs": 32,
-    "mean_full_corpus_ce_ms": 401.9295249991046,
-    "pairs_per_second": 1510.2150059798473,
-    "mean_query_encode_ms": 4.667287498705264,
-    "mean_flat_search_ms": 0.0784562498665764,
+    "mean_full_corpus_ce_ms": 459.77052499711135,
+    "pairs_per_second": 1320.223822533673,
+    "mean_query_encode_ms": 9.876118750980822,
+    "mean_flat_search_ms": 0.14055625069886446,
     "extrapolated_sizes": [
       10000,
       100000,
@@ -111,5 +111,45 @@
       10000000
     ],
     "extrapolation": "fixed pair throughput; encode + linear scan calibrated only at 607; excludes sorting and I/O"
-  }
+  },
+  "answer_cache": {
+    "file": "results/answers.csv",
+    "sha256": "81cb07ce2ebd691b13c5eff0a1a4e0efc5ab1a0919c01254b798bf61b1b1c51c",
+    "source_commit": "9d60343",
+    "answers": 80,
+    "regenerated": false
+  },
+  "input_hashes": {
+    "data/gdpr.pdf": "bd84e63f5b622b739a83389afc3b30d240f792bb88d8eb03a816c9a82b0c2499",
+    "data/eval_queries.yaml": "59889800b3fe7261d04dde24e321540e80fcc593d85a9e911f218b0ba00b97aa",
+    "data/stress_queries.yaml": "47415a125fa5d27a69b1fdedad699f518994c5c19c8624861ad48e0ee2860e36",
+    "data/answer_labels.yaml": "068ac7cc117f518e4ae8b78fbe0829aeec4b897054a2d5e40683015c94618e75"
+  },
+  "execution": {
+    "finished_at": "2026-10-17T22:24:15+05:30",
+    "torch_threads": 24,
+    "faiss_threads": 32,
+    "encoder_dtype": "torch.float32",
+    "torch_peak_allocated_mib": 550.28271484375,
+    "source_commit_before_run": "ce0dd8fc863984d88c96fbb3527cae7e116cd314"
+  },
+  "outputs": [
+    "results/answer_assessment.csv",
+    "results/answer_diagnostics.csv",
+    "results/answer_summary.csv",
+    "results/answers.csv",
+    "results/candidates.csv",
+    "results/case_studies.csv",
+    "results/chunks.csv",
+    "results/eval_summary.csv",
+    "results/latency.csv",
+    "results/latency_llm.csv",
+    "results/latency_overhead.csv",
+    "results/latency_retrieval.csv",
+    "results/metrics.csv",
+    "results/negation_demo.csv",
+    "results/numbers_summary.csv",
+    "results/scaling.csv",
+    "results/scaling_trials.csv"
+  ]
 }

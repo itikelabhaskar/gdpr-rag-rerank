@@ -1,0 +1,29 @@
+area,measure,pipeline,value,unit,n
+retrieval quality,hit@3,baseline,0.4375,fraction,16
+retrieval quality,facts@3,baseline,0.3958333333333333,fraction,16
+retrieval quality,sufficient@3,baseline,0.375,fraction,16
+retrieval quality,mrr@10,baseline,0.3761160714285714,fraction,16
+proposed answer labels,facts_stated,baseline,0.29166666666666663,fraction,16
+proposed answer labels,correct,baseline,0.25,fraction,16
+proposed answer labels,wrong,baseline,0.0625,fraction,16
+proposed answer labels,unsupported,baseline,0.0625,fraction,16
+proposed answer labels,refused,baseline,0.5625,fraction,16
+latency,baseline_retrieval,baseline,4.4576956246601185,ms,160
+latency,baseline_llm_wall_ms,baseline,4735.442093749043,ms,16
+latency,baseline_end_to_end_ms,baseline,4830.313868750636,ms,16
+retrieval quality,hit@3,rerank,0.5625,fraction,16
+retrieval quality,facts@3,rerank,0.5,fraction,16
+retrieval quality,sufficient@3,rerank,0.4375,fraction,16
+retrieval quality,mrr@10,rerank,0.59375,fraction,16
+proposed answer labels,facts_stated,rerank,0.375,fraction,16
+proposed answer labels,correct,rerank,0.25,fraction,16
+proposed answer labels,wrong,rerank,0.125,fraction,16
+proposed answer labels,unsupported,rerank,0.125,fraction,16
+proposed answer labels,refused,rerank,0.375,fraction,16
+latency,rerank_retrieval,rerank,19.419575000029,ms,160
+latency,rerank_llm_wall_ms,rerank,5961.820624999746,ms,16
+latency,rerank_end_to_end_ms,rerank,6135.654218747732,ms,16
+candidate ceiling,facts@10,shared,0.6458333333333333,fraction,16
+latency,cross_encoder_increment,rerank,14.96187937536888,ms,160
+scaling at 607,full_corpus_scoring,cross_encoder,459.77052499711135,ms,16
+scaling at 607,pair_throughput,cross_encoder,1320.223822533673,pairs/s,16
