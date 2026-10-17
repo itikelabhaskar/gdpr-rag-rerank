@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T22:00:06",
+  "ran_at": "2026-10-17T22:03:56",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,7 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 3.83
+    "build_seconds": 3.87
   },
   "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
   "eval_set": {
@@ -82,5 +82,17 @@
     "stress/s17",
     "eval/ex01",
     "stress/s13"
-  ]
+  ],
+  "latency": {
+    "config": "encoders on cuda, faiss on cpu",
+    "warmups": 5,
+    "retrieval_repetitions": 10,
+    "retrieval_trials": 160,
+    "llm_requests": 32,
+    "ollama_placement": "24%/76% CPU/GPU",
+    "generation_order": "alternates by query",
+    "cache_state": "warm model; prefix reuse allowed; raw prompt counters retained",
+    "rerank_over_baseline_retrieval_pct": 280.7864007286473,
+    "rerank_fraction_of_rerank_end_to_end_pct": 0.2452073454400679
+  }
 }
