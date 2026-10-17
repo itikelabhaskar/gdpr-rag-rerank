@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T20:07:08",
+  "ran_at": "2026-10-17T20:42:34",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -34,5 +34,18 @@
       "num_ctx": 4096,
       "num_predict": 400
     }
+  },
+  "corpus": {
+    "file": "data/gdpr.pdf",
+    "sha256": "bd84e63f5b622b739a83389afc3b30d240f792bb88d8eb03a816c9a82b0c2499",
+    "pages": 88,
+    "source": "https://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1.0006.01/DOC_1"
+  },
+  "chunks": {
+    "count": 607,
+    "max_tokens": 349,
+    "cap": 350,
+    "articles": 425,
+    "recitals": 182
   }
 }
