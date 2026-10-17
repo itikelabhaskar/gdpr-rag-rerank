@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T22:20:59",
+  "ran_at": "2026-10-17T23:10:20",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,7 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 3.86
+    "build_seconds": 3.74
   },
   "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
   "eval_set": {
@@ -91,26 +91,31 @@
     "llm_requests": 32,
     "ollama_placement": "24%/76% CPU/GPU",
     "generation_order": "alternates by query",
-    "cache_state": "warm model; prefix reuse allowed; raw prompt counters retained",
-    "rerank_over_baseline_retrieval_pct": 335.6415653998284,
-    "rerank_fraction_of_rerank_end_to_end_pct": 0.24385141081862588
+    "cache_state": "warm model, ollama may reuse a prompt prefix",
+    "rerank_cost": {
+      "isolated_ms": 15.66248312492462,
+      "isolated_pct_of_baseline_retrieval": 316.2216320083532,
+      "live_ms": 125.49565000063012,
+      "live_pct_of_rerank_end_to_end": 1.7925238727703583
+    }
   },
   "scaling": {
     "measured_chunks": 607,
     "queries": 16,
     "batch_size": 32,
     "warmup_pairs": 32,
-    "mean_full_corpus_ce_ms": 459.77052499711135,
-    "pairs_per_second": 1320.223822533673,
-    "mean_query_encode_ms": 9.876118750980822,
-    "mean_flat_search_ms": 0.14055625069886446,
+    "mean_full_corpus_ce_ms": 720.9170374999303,
+    "pairs_per_second": 841.9831526038233,
+    "mean_query_encode_ms": 4.874270624895871,
+    "mean_flat_search_ms": 0.07873749964346644,
+    "bi_encoder_side": "from the isolated latency trials",
     "extrapolated_sizes": [
       10000,
       100000,
       1000000,
       10000000
     ],
-    "extrapolation": "fixed pair throughput; encode + linear scan calibrated only at 607; excludes sorting and I/O"
+    "extrapolation": "fixed pair throughput; encode + linear scan from 607; excludes sorting and I/O"
   },
   "answer_cache": {
     "file": "results/answers.csv",
@@ -126,12 +131,12 @@
     "data/answer_labels.yaml": "068ac7cc117f518e4ae8b78fbe0829aeec4b897054a2d5e40683015c94618e75"
   },
   "execution": {
-    "finished_at": "2026-10-17T22:24:15+05:30",
+    "finished_at": "2026-10-17T23:14:11+05:30",
     "torch_threads": 24,
     "faiss_threads": 32,
     "encoder_dtype": "torch.float32",
     "torch_peak_allocated_mib": 550.28271484375,
-    "source_commit_before_run": "ce0dd8fc863984d88c96fbb3527cae7e116cd314"
+    "git_head": "7a90f6bdd65ff559e64c5bc5391edded6140c24b"
   },
   "outputs": [
     "results/answer_assessment.csv",
@@ -144,7 +149,6 @@
     "results/eval_summary.csv",
     "results/latency.csv",
     "results/latency_llm.csv",
-    "results/latency_overhead.csv",
     "results/latency_retrieval.csv",
     "results/metrics.csv",
     "results/negation_demo.csv",

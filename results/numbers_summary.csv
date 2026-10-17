@@ -8,9 +8,10 @@ proposed answer labels,correct,baseline,0.25,fraction,16
 proposed answer labels,wrong,baseline,0.0625,fraction,16
 proposed answer labels,unsupported,baseline,0.0625,fraction,16
 proposed answer labels,refused,baseline,0.5625,fraction,16
-latency,baseline_retrieval,baseline,4.4576956246601185,ms,160
-latency,baseline_llm_wall_ms,baseline,4735.442093749043,ms,16
-latency,baseline_end_to_end_ms,baseline,4830.313868750636,ms,16
+latency,baseline_retrieval,baseline,4.953008124539338,ms,160
+latency,baseline_live_retrieval,baseline,232.98732500097685,ms,16
+latency,baseline_llm_wall_ms,baseline,5547.887693750454,ms,16
+latency,baseline_end_to_end_ms,baseline,5782.324912499462,ms,16
 retrieval quality,hit@3,rerank,0.5625,fraction,16
 retrieval quality,facts@3,rerank,0.5,fraction,16
 retrieval quality,sufficient@3,rerank,0.4375,fraction,16
@@ -20,10 +21,13 @@ proposed answer labels,correct,rerank,0.25,fraction,16
 proposed answer labels,wrong,rerank,0.125,fraction,16
 proposed answer labels,unsupported,rerank,0.125,fraction,16
 proposed answer labels,refused,rerank,0.375,fraction,16
-latency,rerank_retrieval,rerank,19.419575000029,ms,160
-latency,rerank_llm_wall_ms,rerank,5961.820624999746,ms,16
-latency,rerank_end_to_end_ms,rerank,6135.654218747732,ms,16
+latency,rerank_retrieval,rerank,20.615491249463958,ms,160
+latency,rerank_live_retrieval,rerank,358.482975001607,ms,16
+latency,rerank_llm_wall_ms,rerank,6641.460806250507,ms,16
+latency,rerank_end_to_end_ms,rerank,7001.058781252141,ms,16
 candidate ceiling,facts@10,shared,0.6458333333333333,fraction,16
-latency,cross_encoder_increment,rerank,14.96187937536888,ms,160
-scaling at 607,full_corpus_scoring,cross_encoder,459.77052499711135,ms,16
-scaling at 607,pair_throughput,cross_encoder,1320.223822533673,pairs/s,16
+latency,rerank_cost_isolated,rerank,15.66248312492462,ms,160
+latency,rerank_cost_live,rerank,125.49565000063012,ms,16
+latency,rerank_cost_live_share_of_end_to_end,rerank,1.7925238727703583,%,16
+scaling at 607,full_corpus_scoring,cross_encoder,720.9170374999303,ms,16
+scaling at 607,pair_throughput,cross_encoder,841.9831526038233,pairs/s,16
