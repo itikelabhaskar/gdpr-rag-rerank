@@ -1,0 +1,38 @@
+{
+  "ran_at": "2026-10-17T20:07:08",
+  "python": "3.11.9",
+  "os": "Windows-10-10.0.26300-SP0",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
+  "cuda": "12.8",
+  "device": "cuda",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "sentence-transformers": "6.1.0",
+    "transformers": "5.20.1",
+    "faiss-cpu": "1.15.1",
+    "pymupdf": "1.28.2",
+    "ollama": "0.6.3",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6"
+  },
+  "bi_encoder": {
+    "id": "sentence-transformers/msmarco-MiniLM-L6-cos-v5",
+    "revision": "14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3"
+  },
+  "cross_encoder": {
+    "id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+  },
+  "llm": {
+    "id": "gemma2:9b-instruct-q4_K_M",
+    "digest": "c20bec88025f3aefa420efd64dca0ee4abc8e36078d6b74b0f660cdcbd5d1982",
+    "ollama": "0.34.2",
+    "placement": "24%/76% CPU/GPU",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 4096,
+      "num_predict": 400
+    }
+  }
+}
