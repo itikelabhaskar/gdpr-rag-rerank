@@ -1,5 +1,5 @@
-# RAG: Baseline vs. Cross-Encoder Re-Ranking
+# gdpr rag: bi-encoder vs cross-encoder rerank
 
-LMA assignment — comparing bi-encoder retrieval against cross-encoder re-ranking over the same chunked PDF corpus.
+lma assignment. same gdpr chunks, two retrieval pipelines (plain vector search vs vector search + cross-encoder rerank), same llm and prompt, then compare what each one retrieves and answers.
 
-_Work in progress._
+wip

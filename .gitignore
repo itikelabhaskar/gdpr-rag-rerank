@@ -1,22 +1,19 @@
-# Private working notes, our discussion, plans, the course handout — never published
+# private stuff (our notes, plans, the handout), never goes to github
 archive/
 
-# Secrets (API keys live in .env, never in the notebook)
+# keys, just in case
 .env
-.env.*
-!.env.example
 
-# Python / Jupyter
+# python / jupyter
 __pycache__/
 *.py[cod]
 .venv/
 .ipynb_checkpoints/
 
-# Model / embedding caches
+# hf / model caches
 .cache/
-cache/
 
-# Editor / OS
+# editor / os junk
 .vscode/
 .idea/
 Thumbs.db
