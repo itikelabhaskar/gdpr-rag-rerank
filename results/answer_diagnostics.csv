@@ -2,14 +2,14 @@ set,query_id,pipeline,registered_support_in_context,refused,unsupported,overall,
 eval,kt04,rerank,False,False,True,wrong,"A company has to respond to your request to see your personal data within one month.  [Art. 12(4)] 
 
 It can take longer if there are specific circumstances. [Art. 12(4)]","one-month claim is partial; art12.4 concerns not taking action and does not authorise the claimed extension; complexity, two further months and notice are absent"
-stress,s05,rerank,False,False,False,incomplete,"[Art. 21(3)] 
-Yes.  If you object to processing for direct marketing purposes, the personal data shall no longer be processed for such purposes.",marketing-only statement is grounded in art21.3 but does not answer the general objection rule or its exceptions; introductory Yes is ambiguous
+stress,s05,rerank,False,False,True,wrong,"[Art. 21(3)] 
+Yes.  If you object to processing for direct marketing purposes, the personal data shall no longer be processed for such purposes.","a bare Yes to 'do they always have to stop' says they always must, which contradicts the compelling grounds / legal claims exception; its passages only cover direct marketing, so the general always is unsupported"
 stress,s08,rerank,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
 stress,s09,baseline,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
 stress,s09,rerank,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
 stress,s12,rerank,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
 stress,s18,rerank,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
-stress,s19,rerank,False,False,True,wrong,Yes. [Art. 57(4)],"art57.4 authorises supervisory authorities, not the company asked about; the answer transfers the power to the wrong role"
+stress,s19,rerank,False,False,True,wrong,Yes. [Art. 57(4)],"the Yes asserts the company can refuse repeated requests, which matches the fact; but it cites art 57(4), a supervisory authority power, so the claim isn't supported by its passages"
 stress,s22,baseline,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
 stress,s23,baseline,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages
 stress,s23,rerank,True,True,False,refused,Not found in the provided context.,refused despite registered support in its top three passages

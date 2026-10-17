@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T23:10:20",
+  "ran_at": "2026-10-17T23:21:22",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,7 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 3.74
+    "build_seconds": 2.23
   },
   "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
   "eval_set": {
@@ -70,8 +70,8 @@
   "answer_labels": {
     "file": "data/answer_labels.yaml",
     "answers": 80,
-    "sha256": "068ac7cc117f518e4ae8b78fbe0829aeec4b897054a2d5e40683015c94618e75",
-    "status": "proposed for checkpoint e review"
+    "sha256": "74b9a5cce048e547dd8065069ac4712bd9bc6f197f4cbf64f523d08b942b10d2",
+    "status": "first pass + a second pass on 6 disputed answers, still open to a human check"
   },
   "showcases": [
     "eval/kt02",
@@ -93,10 +93,10 @@
     "generation_order": "alternates by query",
     "cache_state": "warm model, ollama may reuse a prompt prefix",
     "rerank_cost": {
-      "isolated_ms": 15.66248312492462,
-      "isolated_pct_of_baseline_retrieval": 316.2216320083532,
-      "live_ms": 125.49565000063012,
-      "live_pct_of_rerank_end_to_end": 1.7925238727703583
+      "isolated_ms": 16.560544374169694,
+      "isolated_pct_of_baseline_retrieval": 299.2974376937925,
+      "live_ms": 219.4632749979064,
+      "live_pct_of_rerank_end_to_end": 3.0406629255350763
     }
   },
   "scaling": {
@@ -104,10 +104,10 @@
     "queries": 16,
     "batch_size": 32,
     "warmup_pairs": 32,
-    "mean_full_corpus_ce_ms": 720.9170374999303,
-    "pairs_per_second": 841.9831526038233,
-    "mean_query_encode_ms": 4.874270624895871,
-    "mean_flat_search_ms": 0.07873749964346644,
+    "mean_full_corpus_ce_ms": 473.7162999999782,
+    "pairs_per_second": 1281.357639583075,
+    "mean_query_encode_ms": 5.446684999878926,
+    "mean_flat_search_ms": 0.08645437537779799,
     "bi_encoder_side": "from the isolated latency trials",
     "extrapolated_sizes": [
       10000,
@@ -128,15 +128,15 @@
     "data/gdpr.pdf": "bd84e63f5b622b739a83389afc3b30d240f792bb88d8eb03a816c9a82b0c2499",
     "data/eval_queries.yaml": "59889800b3fe7261d04dde24e321540e80fcc593d85a9e911f218b0ba00b97aa",
     "data/stress_queries.yaml": "47415a125fa5d27a69b1fdedad699f518994c5c19c8624861ad48e0ee2860e36",
-    "data/answer_labels.yaml": "068ac7cc117f518e4ae8b78fbe0829aeec4b897054a2d5e40683015c94618e75"
+    "data/answer_labels.yaml": "74b9a5cce048e547dd8065069ac4712bd9bc6f197f4cbf64f523d08b942b10d2"
   },
   "execution": {
-    "finished_at": "2026-10-17T23:14:11+05:30",
+    "finished_at": "2026-10-17T23:25:14+05:30",
     "torch_threads": 24,
     "faiss_threads": 32,
     "encoder_dtype": "torch.float32",
     "torch_peak_allocated_mib": 550.28271484375,
-    "git_head": "7a90f6bdd65ff559e64c5bc5391edded6140c24b"
+    "git_head": "3196bd8c18916be32009761e266eb28d329a5db8"
   },
   "outputs": [
     "results/answer_assessment.csv",

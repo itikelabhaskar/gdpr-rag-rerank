@@ -3,6 +3,9 @@
 # a partial fact is missing, a contradicted fact is wrong; materially omitted conditions are not supplied by citations
 # an unambiguous yes/no can state a single proposition already explicit in the question
 # these are assistant-proposed labels, not independent human grading; borderline calls are in note
+# second pass, 17 oct 2026: a blind relabel disagreed on 6 answers, re-decided with the same rules as the rest
+# changed: eval kt03 baseline + rerank (fact 1 -> missing), stress s05 rerank + s17 baseline (-> wrong, unsupported),
+# s19 rerank (fact 1 -> stated, still wrong via unsupported), s02 baseline (fact 2 -> stated). reasons are in each note
 - set: eval
   query_id: kt01
   pipeline: baseline
@@ -60,27 +63,27 @@
   pipeline: baseline
   answer_sha: 417ef0e29d3f
   facts:
-  - stated
+  - missing
   - stated
   - stated
   unsupported: false
   refused: false
   truncated: false
-  overall: correct
-  note: liability for damage answers compensation in the question context; both liability limits are stated
+  overall: incomplete
+  note: states the processor limit and the exemption, never the general right to compensation from a controller or processor (rec146 has it); partial = missing, same as s01 / s02
 - set: eval
   query_id: kt03
   pipeline: rerank
   answer_sha: 9cfa887abc4e
   facts:
-  - stated
+  - missing
   - stated
   - stated
   unsupported: false
   refused: false
   truncated: false
-  overall: correct
-  note: liability for damage answers compensation in the question context; both liability limits are stated
+  overall: incomplete
+  note: states the processor limit and the exemption, never the general right to compensation from a controller or processor; partial = missing, same as s01 / s02
 - set: eval
   query_id: kt04
   pipeline: rerank
@@ -443,12 +446,12 @@
   answer_sha: 91a715cc7b22
   facts:
   - missing
-  - missing
+  - stated
   unsupported: false
   refused: false
   truncated: false
   overall: incomplete
-  note: first-copy free rule is not explicitly stated; additional fee omits administrative-cost basis
+  note: first copy being free is only implied, not stated; 'reasonable fee for copies beyond the first one' states the further-copies rule, administrative costs only explain what reasonable means
 - set: stress
   query_id: s03
   pipeline: baseline
@@ -510,14 +513,13 @@
   pipeline: rerank
   answer_sha: 2a6cd642d3e2
   facts:
-  - missing
-  - missing
-  unsupported: false
+  - stated
+  - wrong
+  unsupported: true
   refused: false
   truncated: false
-  overall: incomplete
-  note: marketing-only statement is grounded in art21.3 but does not answer the general objection rule or its exceptions;
-    introductory Yes is ambiguous
+  overall: wrong
+  note: a bare Yes to 'do they always have to stop' says they always must, which contradicts the compelling grounds / legal claims exception; its passages only cover direct marketing, so the general always is unsupported
 - set: stress
   query_id: s06
   pipeline: rerank
@@ -771,14 +773,13 @@
   pipeline: baseline
   answer_sha: 479d3fa66a8c
   facts:
-  - missing
+  - wrong
   - stated
-  unsupported: false
+  unsupported: true
   refused: false
   truncated: false
-  overall: incomplete
-  note: not banned is read as not absolutely banned; the general prohibition is not stated; consent is an illustrative
-    example in this stress fact, not separately required
+  overall: wrong
+  note: '''not banned'' contradicts the general prohibition, its own art 9(2) passage says ''the prohibition referred to in paragraph 1''; exceptions stated'
 - set: stress
   query_id: s17
   pipeline: rerank
@@ -829,13 +830,12 @@
   pipeline: rerank
   answer_sha: 0482508288be
   facts:
-  - wrong
+  - stated
   unsupported: true
   refused: false
   truncated: false
   overall: wrong
-  note: art57.4 authorises supervisory authorities, not the company asked about; the answer transfers the power to the
-    wrong role
+  note: the Yes asserts the company can refuse repeated requests, which matches the fact; but it cites art 57(4), a supervisory authority power, so the claim isn't supported by its passages
 - set: stress
   query_id: s20
   pipeline: rerank

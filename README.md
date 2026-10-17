@@ -37,10 +37,10 @@ results/           everything the notebook writes: csvs, figures/, run_info.json
 | rerank | 0.562 | 0.500 | 0.438 | 0.594 |
 
 - the 10 candidates only hold 64.6% of the needed facts (6/16 questions miss one), rerank can't fix those
-- answers, proposed labels not final yet: 4/16 fully correct for baseline, 4/16 for rerank
-- retrieval on its own: 5.0 ms -> 20.6 ms. inside the live requests the reranker added ~125 ms
-- end to end: 5.78 s -> 7.00 s. that gap is mostly longer prompts and answers, the reranker itself is ~1.8% of it
-- cross-encoder over all 607 chunks: ~721 ms per question. at 1M chunks that would be ~20 min (extrapolated, not run)
+- answers, proposed labels not final yet: 3/16 fully correct for baseline, 3/16 for rerank
+- retrieval on its own: 5.5 ms -> 22.1 ms. inside the live requests the reranker added ~219 ms
+- end to end: 5.98 s -> 7.22 s. that gap is mostly longer prompts and answers, the reranker itself is ~3.0% of it
+- cross-encoder over all 607 chunks: ~474 ms per question. at 1M chunks that would be ~13 min (extrapolated, not run)
 
 ![latency](results/figures/latency.png)
 
@@ -48,7 +48,7 @@ results/           everything the notebook writes: csvs, figures/, run_info.json
 
 - rtx 4070 laptop (8 gb), cuda 12.8. encoders on the gpu, faiss on the cpu. gemma2 doesn't fully fit next to everything else on the desktop,
   ollama ran it 24%/76% CPU/GPU, so generation is slower than on a bigger card
-- timings move between runs on this desktop, the csvs are from the last run. 4 of the 32 live timing answers came out slightly different from the cached ones, `latency_llm.csv` marks them
+- timings move between runs on this desktop, the csvs are from the last run. 5 of the 32 live timing answers came out slightly different from the cached ones, `latency_llm.csv` marks them
 - models: `sentence-transformers/msmarco-MiniLM-L6-cos-v5` @ `14ca9be4bbcf`, `cross-encoder/ms-marco-MiniLM-L6-v2` @ `233902d25c44`, `gemma2:9b-instruct-q4_K_M` (digest in run_info.json)
 - pdf: [original 2016 text](https://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1.0006.01/DOC_1), 88 pages, sha256 `bd84e63f5b622b73...`
 - left out of the corpus: the title + citations before the recitals, footnotes, and the closing line + signatures after art 99
