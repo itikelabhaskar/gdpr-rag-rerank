@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T22:03:56",
+  "ran_at": "2026-10-17T22:11:25",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,7 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 3.87
+    "build_seconds": 2.74
   },
   "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
   "eval_set": {
@@ -92,7 +92,24 @@
     "ollama_placement": "24%/76% CPU/GPU",
     "generation_order": "alternates by query",
     "cache_state": "warm model; prefix reuse allowed; raw prompt counters retained",
-    "rerank_over_baseline_retrieval_pct": 280.7864007286473,
-    "rerank_fraction_of_rerank_end_to_end_pct": 0.2452073454400679
+    "rerank_over_baseline_retrieval_pct": 195.90317529500126,
+    "rerank_fraction_of_rerank_end_to_end_pct": 0.3731265403721824
+  },
+  "scaling": {
+    "measured_chunks": 607,
+    "queries": 16,
+    "batch_size": 32,
+    "warmup_pairs": 32,
+    "mean_full_corpus_ce_ms": 401.9295249991046,
+    "pairs_per_second": 1510.2150059798473,
+    "mean_query_encode_ms": 4.667287498705264,
+    "mean_flat_search_ms": 0.0784562498665764,
+    "extrapolated_sizes": [
+      10000,
+      100000,
+      1000000,
+      10000000
+    ],
+    "extrapolation": "fixed pair throughput; encode + linear scan calibrated only at 607; excludes sorting and I/O"
   }
 }
