@@ -1,0 +1,175 @@
+# fixed eval set, written + labelled before any scored run, frozen on 17 oct 2026 (hash checked in the notebook)
+# the aggregate hit@3 / facts@3 / mrr numbers come only from this file
+# later fixes are only allowed for clear labelling mistakes, each one logged at the bottom with a reason
+#
+# source: original 2016 gdpr in results/chunks.csv
+# chunk id/text sha256: 9efa82c7d031b672023feb77f10a8b8e4a1fb9de3c7bb4c13e78b9d6d90f04bd
+# each support list contains alternatives for one fact; separate facts are jointly required
+# a recital counts as support when its text states the fact, same bar as an article
+# categories are intended stress topics, not observed retrieval failures or rank positions
+#
+# dev exposure, before this file existed
+# - demo query (consent withdrawal, art 7(3)) is dev only and not in here
+# - "how long can personal data be stored?" ran once as a script during phase 2, its output was never printed
+#   or looked at, then the cell got switched to the demo query. close to bd04, but no retrieval result was seen
+
+- id: kt01
+  category: keyword_trap
+  query: How old must a child be to agree to an app using their data on their own, and can an EU country lower that age?
+  facts:
+    - text: For an online service offered directly to a child and relying on consent, the default age for the child's own consent is 16.
+      support: [art8.1]
+    - text: Below the applicable age, consent must be given or authorised by the holder of parental responsibility.
+      support: [art8.1]
+    - text: Member States may set a lower age by law, but not below 13.
+      support: [art8.1]
+
+- id: kt02
+  category: keyword_trap
+  query: When a data controller discovers a personal-data breach, how quickly must it tell the regulator, and what if it is late?
+  facts:
+    - text: Notification is required without undue delay and, where feasible, no later than 72 hours after becoming aware of the breach.
+      support: [art33.1, rec85]
+    - text: Notification is not required where the breach is unlikely to result in a risk to people's rights and freedoms.
+      support: [art33.1, rec85]
+    - text: A notification made after 72 hours must be accompanied by reasons for the delay.
+      support: [art33.1, rec85]
+
+- id: kt03
+  category: keyword_trap
+  query: When is a data processor liable to compensate me for harm under the GDPR, and can it avoid liability by proving it was not responsible?
+  facts:
+    - text: A person who suffers damage from processing that infringes the GDPR has a right to compensation from the controller or processor.
+      support: [art82.1, rec146]
+    - text: A processor is liable only where it breaches GDPR obligations specifically directed to processors or acts outside or contrary to the controller's lawful instructions.
+      support: [art82.2]
+    - text: A controller or processor is exempt from liability if it proves that it was not in any way responsible for the event giving rise to the damage.
+      support: [art82.3, rec146]
+
+- id: kt04
+  category: keyword_trap
+  query: How long does a company have to respond to my request to see my personal data, and can it take longer?
+  facts:
+    - text: The controller must respond without undue delay and at the latest within one month of receiving the request.
+      support: [art12.3, rec59]
+    - text: Where necessary because of the complexity or number of requests, that period may be extended by two further months.
+      support: [art12.3]
+    - text: The controller must tell the person about the extension and its reasons within the first month.
+      support: [art12.3]
+
+- id: ex01
+  category: exception
+  query: What is my right to get personal data deleted, and can deletion be refused when the data is needed to defend a legal claim?
+  facts:
+    - text: There is a right to erasure on specified grounds, such as data no longer being necessary for its purposes or processing being unlawful.
+      support: [art17.1, rec65]
+    - text: Erasure does not apply to the extent that processing is necessary for the establishment, exercise or defence of legal claims.
+      support: [art17.3, rec65]
+
+- id: ex02
+  category: exception
+  query: Is using my health information always forbidden, even if I explicitly agree to it?
+  facts:
+    - text: Processing data concerning health is prohibited as a general rule for special categories of personal data.
+      support: [art9.1]
+    - text: Explicit consent is one possible exception to the prohibition on processing special categories of personal data.
+      support: [art9.2_p1, rec51]
+    - text: The consent exception requires consent for specified purposes and does not override Union or Member State law that prevents the prohibition being lifted by consent.
+      support: [art9.2_p1]
+
+- id: ex03
+  category: exception
+  query: Can a company use safeguards to send my data to a country without an EU adequacy decision, and what rights must I still have?
+  facts:
+    - text: In the absence of an adequacy decision, a controller or processor may use an appropriate-safeguards route for the transfer.
+      support: [art46.1, rec108]
+    - text: That route requires enforceable data-subject rights and effective legal remedies to be available.
+      support: [art46.1, rec108]
+
+- id: ex04
+  category: exception
+  query: If a company gets my data from someone else, must it tell me, and what if contacting everyone is impossible or would take disproportionate effort?
+  facts:
+    - text: A controller normally has to provide the person with information about processing when the personal data were obtained from another source.
+      support: [art14.1, art14.2, art14.3, rec61]
+    - text: The information obligation can be excepted where providing it proves impossible or would involve disproportionate effort, subject to the stated conditions.
+      support: [art14.5, rec62]
+    - text: When relying on this impossibility or disproportionate-effort exception, the controller must take appropriate measures to protect the person's rights and interests, including making the information publicly available.
+      support: [art14.5]
+
+- id: ng01
+  category: negation
+  query: After a high-risk personal-data breach, when can a controller avoid telling each affected person, and when must it use a public notice instead?
+  facts:
+    - text: Individual communication is not required when appropriate protection measures were applied to the affected data, in particular measures such as encryption that make it unintelligible to unauthorised people.
+      support: [art34.3]
+    - text: Individual communication is not required when subsequent measures ensure that the high risk to people's rights and freedoms is no longer likely to materialise.
+      support: [art34.3]
+    - text: Disproportionate effort can replace individual messages with a public communication or similar measure that informs people in an equally effective way.
+      support: [art34.3]
+
+- id: ng02
+  category: negation
+  query: Does having fewer than 250 staff automatically mean an organisation does not need records of its data processing?
+  facts:
+    - text: Organisations employing fewer than 250 people can qualify for a derogation from the record-keeping obligations.
+      support: [art30.5, rec13]
+    - text: The derogation does not apply if the processing is likely to risk people's rights and freedoms, is not occasional, or includes special-category data or data about criminal convictions and offences.
+      support: [art30.5]
+
+- id: ng03
+  category: negation
+  query: Can a processor hire another processor without asking the controller, and what changes if it already has a general approval?
+  facts:
+    - text: Engaging another processor requires the controller's prior specific or general written authorisation.
+      support: [art28.2]
+    - text: Under general written authorisation, the processor must inform the controller of intended additions or replacements and give it the opportunity to object.
+      support: [art28.2]
+
+- id: ng04
+  category: negation
+  query: Can a company punish or fire its data protection officer for carrying out their GDPR tasks?
+  facts:
+    - text: The controller or processor must not dismiss or penalise the data protection officer for performing those tasks.
+      support: [art38.3]
+
+- id: bd01
+  category: buried
+  query: For a company with no EU establishment, how do offering free services to people in the EU and tracking their behaviour there affect whether GDPR applies?
+  facts:
+    - text: Processing related to offering goods or services to people who are in the Union is covered even when they do not have to pay.
+      support: [art3.2, rec23, rec80]
+    - text: Processing related to monitoring those people's behaviour is covered insofar as the behaviour takes place within the Union.
+      support: [art3.2, rec24, rec80]
+
+- id: bd02
+  category: buried
+  query: Does GDPR cover my purely private address book, and does that also exempt a company providing the service I use to keep it?
+  facts:
+    - text: A natural person's processing in the course of a purely personal or household activity is outside the Regulation's scope.
+      support: [art2.2, rec18]
+    - text: The household exemption does not exempt controllers or processors that provide the means for that personal or household processing.
+      support: [rec18]
+
+- id: bd03
+  category: buried
+  query: Using ordinary personal data, can a computer alone make a decision that seriously affects me, and what exceptions and human-review rights apply?
+  facts:
+    - text: A person has a right not to be subject to a decision based solely on automated processing that produces legal effects or similarly significantly affects them.
+      support: [art22.1, rec71_p1]
+    - text: The listed exceptions are necessity for entering into or performing a contract, authorisation by Union or Member State law with suitable safeguards, or the person's explicit consent.
+      support: [art22.2, rec71_p1]
+    - text: For the contract-necessity and explicit-consent cases, safeguards must include at least human intervention by the controller, the person's opportunity to express their point of view, and a way to contest the decision.
+      support: [art22.3, rec71_p1]
+
+- id: bd04
+  category: buried
+  query: How long may a company keep identifiable personal data, including for public-interest archives or research?
+  facts:
+    - text: The ordinary rule is to keep identifiable personal data no longer than necessary for the purposes for which it is processed.
+      support: [art5.1_p1, art17.1, rec39_p1, rec65]
+    - text: Longer storage is permitted insofar as the data are processed solely for public-interest archiving, scientific or historical research, or statistical purposes, with the required safeguards for people's rights and freedoms.
+      support: [art5.1_p1]
+
+# label fixes log (date, id, what changed, why)
+# none yet

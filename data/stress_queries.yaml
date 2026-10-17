@@ -1,0 +1,213 @@
+# stress set = failure hunting log, written after seeing the eval set results (that's the point of it)
+# every query here is labelled BEFORE it gets run, labels come from the chunk text (plain text search, no model ranking)
+# every attempt stays in this file in the order it was tried, wins and losses alike
+# results from here are shown as examples only, never averaged into a score
+#
+# same label rules as the eval set: support ids under one fact are alternatives, separate facts are all needed,
+# a recital counts when its text states the fact
+# wording is deliberately plain / colloquial (hack, fee, fired, boss) since that's where a bi-encoder slips
+#
+# batch 1, 17 oct 2026, written in one go before any of it was run
+
+- id: s01
+  category: keyword_trap
+  query: if a company gets hacked and my data leaks, how many hours do they have to report it?
+  note: hack / leak / report vs "personal data breach" / "notify the supervisory authority"
+  facts:
+    - text: the breach has to be notified to the supervisory authority without undue delay and, where feasible, within 72 hours of becoming aware of it
+      support: [art33.1, rec85]
+
+- id: s02
+  category: keyword_trap
+  query: do i have to pay a fee to get a copy of my own data?
+  note: fee / pay vs "free of charge" and "reasonable fee based on administrative costs"
+  facts:
+    - text: access and the actions taken on a data subject request are free of charge
+      support: [art12.5, rec59]
+    - text: for any further copies the controller may charge a reasonable fee based on administrative costs
+      support: [art15.3]
+
+- id: s03
+  category: keyword_trap
+  query: what does it mean when my data is pseudonymised?
+  note: many chunks mention pseudonymisation as a safeguard, only the art 4 definition says what it is
+  facts:
+    - text: the data can no longer be attributed to a specific person without additional information, which is kept separately and protected by technical and organisational measures
+      support: [art4.5]
+
+- id: s04
+  category: keyword_trap
+  query: what is the biggest fine a company can get for breaking gdpr?
+  note: lots of fine related chunks, the top tier is art 83(5) / 83(6)
+  facts:
+    - text: up to 20 000 000 EUR or, for an undertaking, up to 4 % of total worldwide annual turnover of the preceding year, whichever is higher
+      support: [art83.5, art83.6]
+
+- id: s05
+  category: exception
+  query: if i object to a company using my data, do they always have to stop?
+  note: rule (stop) and its exception (compelling legitimate grounds / legal claims) sit in the same paragraph
+  facts:
+    - text: after an objection the controller must no longer process the data
+      support: [art21.1, rec69]
+    - text: unless it demonstrates compelling legitimate grounds that override the person's interests, rights and freedoms, or the processing is for legal claims
+      support: [art21.1]
+
+- id: s06
+  category: exception
+  query: do i always get a full copy of my data even if it includes information about other people?
+  note: the right to a copy is in 15(3), its limit is a separate paragraph 15(4)
+  facts:
+    - text: the controller has to provide a copy of the personal data being processed
+      support: [art15.3]
+    - text: the right to a copy must not adversely affect the rights and freedoms of others
+      support: [art15.4, rec63]
+
+- id: s07
+  category: exception
+  query: can a company use my personal data without asking for my consent?
+  note: the word consent is everywhere (art 4(11), art 7, art 8, recitals 32, 42, 43), the answer is the other legal bases in art 6(1)
+  facts:
+    - text: yes, processing can also be lawful on a basis other than consent (contract, legal obligation, vital interests, public task, legitimate interests)
+      support: [art6.1, rec40]
+
+- id: s08
+  category: exception
+  query: does the right to be forgotten still apply when the data is needed for public health reasons?
+  note: exception buried in a list of five
+  facts:
+    - text: erasure does not apply to the extent processing is needed for reasons of public interest in the area of public health
+      support: [art17.3, rec65]
+
+- id: s09
+  category: negation
+  query: when does a company not need to report a data breach to the authorities?
+  note: asks "not need" against the obligation sentence, the exception is the "unless ... unlikely to result in a risk" clause
+  facts:
+    - text: no notification is needed when the breach is unlikely to result in a risk to the rights and freedoms of natural persons
+      support: [art33.1, rec85]
+
+- id: s10
+  category: negation
+  query: which organisations don't have to appoint a data protection officer?
+  note: asked in the negative, the text only lists when a dpo is required
+  facts:
+    - text: a dpo is only mandatory for public authorities (except courts acting judicially), core activities needing regular and systematic monitoring on a large scale, or large scale processing of special categories / criminal data
+      support: [art37.1]
+
+- id: s11
+  category: negation
+  query: is my company's data protection officer allowed to be told by management how to do their job?
+  note: role limit phrased loosely, answer is "does not receive any instructions"
+  facts:
+    - text: the dpo must not receive any instructions regarding the exercise of their tasks
+      support: [art38.3]
+
+- id: s12
+  category: negation
+  query: can government ministries and other public bodies be fined under the gdpr?
+  note: no direct yes or no, each member state decides
+  facts:
+    - text: each member state may lay down whether and to what extent administrative fines can be imposed on its public authorities and bodies
+      support: [art83.7, rec150]
+
+- id: s13
+  category: buried
+  query: what is the maximum fine for breaking the rules on children's consent?
+  note: art 83(4) only lists article numbers ("Articles 8, 11, 25 to 39"), nothing about children, likely unfixable
+  facts:
+    - text: up to 10 000 000 EUR or 2 % of total worldwide annual turnover, whichever is higher (art 8 sits in the 83(4) tier)
+      support: [art83.4]
+
+- id: s14
+  category: buried
+  query: if the data protection authority ignores my complaint, can i take them to court?
+  note: the right sits in art 78(2) / recital 141 among many complaint and remedy chunks
+  facts:
+    - text: yes, there is a right to an effective judicial remedy when the supervisory authority does not handle or act on a complaint
+      support: [art78.2, rec141]
+    - text: this includes when it does not inform the person within three months about the progress or outcome of the complaint
+      support: [art78.2]
+
+- id: s15
+  category: buried
+  query: can eu countries make their own rules about how employers use workers' data?
+  note: employer / workers vs "employees' personal data in the employment context"
+  facts:
+    - text: member states may provide, by law or collective agreements, more specific rules for processing employees' personal data in the employment context
+      support: [art88.1, rec155]
+
+- id: s16
+  category: buried
+  query: how fast does a company have to fix wrong information it holds about me?
+  note: fix / wrong vs "rectification of inaccurate personal data"
+  facts:
+    - text: rectification has to happen without undue delay
+      support: [art16]
+
+# batch 2, 17 oct 2026, after batch 1 had no fixed case for exception or negation
+# again all labelled from the chunk text before running. aimed at rule-vs-exception and "not" questions
+
+- id: s17
+  category: exception
+  query: is processing sensitive data like religion or health banned, or are there exceptions?
+  note: rule in 9(1), exceptions in the two 9(2) pieces
+  facts:
+    - text: processing special categories (religion, health, ...) is prohibited in general
+      support: [art9.1]
+    - text: there are exceptions, for example explicit consent
+      support: [art9.2_p1, art9.2_p2, rec51]
+
+- id: s18
+  category: exception
+  query: when does the right to data portability not apply?
+  note: the exception is one sentence at the end of 20(3)
+  facts:
+    - text: it does not apply to processing necessary for a task in the public interest or in the exercise of official authority
+      support: [art20.3, rec68_p1]
+
+- id: s19
+  category: exception
+  query: can a company refuse my request if i keep sending the same one over and over?
+  note: repetitive -> "manifestly unfounded or excessive", the general rule (free, one month) is all around it
+  facts:
+    - text: for manifestly unfounded or excessive (e.g. repetitive) requests the controller may charge a reasonable fee or refuse to act
+      support: [art12.5]
+
+- id: s20
+  category: exception
+  query: can a company skip telling me how it uses my data if i already know?
+  note: the information duty and its "already has the information" exception
+  facts:
+    - text: the information duty does not apply where and insofar as the person already has the information
+      support: [art13.4, art14.5, rec62]
+
+- id: s21
+  category: negation
+  query: when is a company not required to tell people their data was in a breach?
+  note: plainer wording of eval ng01, exception list in 34(3) vs the obligation in 34(1)
+  facts:
+    - text: not required if the data was made unintelligible (e.g. encryption), later measures mean the high risk is no longer likely, or it would take disproportionate effort (then a public communication instead)
+      support: [art34.3]
+
+- id: s22
+  category: negation
+  query: does the gdpr apply to the personal data of people who have died?
+  facts:
+    - text: no, it does not apply to the personal data of deceased persons (member states may make their own rules)
+      support: [rec27, rec158, rec160]
+
+- id: s23
+  category: negation
+  query: does the gdpr apply to anonymous data?
+  facts:
+    - text: no, data protection principles do not apply to anonymous information
+      support: [rec26]
+
+- id: s24
+  category: negation
+  query: which data processing are supervisory authorities not allowed to supervise?
+  note: role limit
+  facts:
+    - text: processing by courts acting in their judicial capacity
+      support: [art55.3, rec20]

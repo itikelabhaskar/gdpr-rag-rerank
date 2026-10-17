@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T21:01:07",
+  "ran_at": "2026-10-17T21:36:42",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -53,7 +53,18 @@
     "type": "faiss.IndexFlatIP",
     "vectors": 607,
     "dim": 384,
-    "build_seconds": 3.92
+    "build_seconds": 2.7
   },
-  "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:"
+  "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:",
+  "eval_set": {
+    "file": "data/eval_queries.yaml",
+    "sha256": "59889800b3fe7261d04dde24e321540e80fcc593d85a9e911f218b0ba00b97aa",
+    "queries": 16,
+    "facts": 39
+  },
+  "stress_set": {
+    "file": "data/stress_queries.yaml",
+    "sha256": "47415a125fa5d27a69b1fdedad699f518994c5c19c8624861ad48e0ee2860e36",
+    "queries": 24
+  }
 }

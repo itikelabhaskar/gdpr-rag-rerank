@@ -1,0 +1,41 @@
+set,query_id,category,outcome,pool_gap,baseline_hit@3,baseline_facts@3,baseline_sufficient@3,baseline_rr@10,facts@10,rerank_hit@3,rerank_facts@3,rerank_sufficient@3,rerank_rr@10,support_moves
+eval,kt01,keyword_trap,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,art8.1 #1 -> #1
+eval,kt02,keyword_trap,fixed,False,0.0,0.0,0.0,0.25,1.0,1.0,1.0,1.0,1.0,art33.1 #4 -> #1
+eval,kt03,keyword_trap,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,art82.2 #2 -> #3; rec146 #3 -> #2; art82.3 #4 -> #1
+eval,kt04,keyword_trap,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+eval,ex01,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+eval,ex02,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+eval,ex03,exception,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,rec108 #1 -> #1; art46.1 #2 -> #2
+eval,ex04,exception,improved,True,0.0,0.0,0.0,0.14285714285714285,0.3333333333333333,1.0,0.3333333333333333,0.0,1.0,rec61 #7 -> #1
+eval,ng01,negation,"same, missing",False,0.0,0.0,0.0,0.125,1.0,0.0,0.0,0.0,0.25,art34.3 #8 -> #4
+eval,ng02,negation,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,art30.5 #2 -> #1
+eval,ng03,negation,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,art28.2 #1 -> #1
+eval,ng04,negation,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,art38.3 #1 -> #1
+eval,bd01,buried,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+eval,bd02,buried,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+eval,bd03,buried,improved,False,1.0,0.3333333333333333,0.0,0.3333333333333333,1.0,1.0,0.6666666666666666,0.0,1.0,art22.3 #3 -> #3; art22.1 #6 -> #1; art22.2 #8 -> #6
+eval,bd04,buried,"same, missing",False,0.0,0.0,0.0,0.16666666666666666,1.0,0.0,0.0,0.0,0.25,art5.1_p1 #6 -> #4
+stress,s01,keyword_trap,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,rec85 #1 -> #2; art33.1 #2 -> #1
+stress,s02,keyword_trap,fixed,False,1.0,0.5,0.0,1.0,1.0,1.0,1.0,1.0,1.0,art15.3 #1 -> #1; art12.5 #7 -> #2
+stress,s03,keyword_trap,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,art4.5 #1 -> #1
+stress,s04,keyword_trap,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s05,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s06,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s07,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s08,exception,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,art17.3 #2 -> #2; rec65 #3 -> #1
+stress,s09,negation,"same, ok",False,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,rec85 #1 -> #2; art33.1 #3 -> #4
+stress,s10,negation,"same, missing",False,0.0,0.0,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.1,art37.1 #9 -> #10
+stress,s11,negation,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,art38.3 #2 -> #1
+stress,s12,negation,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,art83.7 #2 -> #1
+stress,s13,buried,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s14,buried,"same, missing",True,1.0,0.5,0.0,0.3333333333333333,0.5,1.0,0.5,0.0,1.0,rec141 #3 -> #1
+stress,s15,buried,fixed,False,0.0,0.0,0.0,0.1111111111111111,1.0,1.0,1.0,1.0,1.0,art88.1 #9 -> #1
+stress,s16,buried,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s17,exception,hurt,True,1.0,0.5,0.0,0.5,0.5,0.0,0.0,0.0,0.2,art9.2_p1 #2 -> #6; art9.2_p2 #6 -> #5
+stress,s18,exception,fixed,False,0.0,0.0,0.0,0.25,1.0,1.0,1.0,1.0,1.0,art20.3 #4 -> #1; rec68_p1 #9 -> #5
+stress,s19,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s20,exception,"same, missing",True,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,none in the 10
+stress,s21,negation,fixed,False,0.0,0.0,0.0,0.125,1.0,1.0,1.0,1.0,1.0,art34.3 #8 -> #1
+stress,s22,negation,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,rec27 #2 -> #1; rec158 #8 -> #2
+stress,s23,negation,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,rec26 #2 -> #1
+stress,s24,negation,"same, ok",False,1.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,art55.3 #2 -> #1
