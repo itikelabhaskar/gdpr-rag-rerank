@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-17T20:42:34",
+  "ran_at": "2026-10-17T21:01:07",
   "python": "3.11.9",
   "os": "Windows-10-10.0.26300-SP0",
   "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 617.42",
@@ -46,6 +46,14 @@
     "max_tokens": 349,
     "cap": 350,
     "articles": 425,
-    "recitals": 182
-  }
+    "recitals": 182,
+    "sha256": "9efa82c7d031b672023feb77f10a8b8e4a1fb9de3c7bb4c13e78b9d6d90f04bd"
+  },
+  "index": {
+    "type": "faiss.IndexFlatIP",
+    "vectors": 607,
+    "dim": 384,
+    "build_seconds": 3.92
+  },
+  "prompt_template": "You answer questions about the EU GDPR using ONLY the passages below.\nDo not use outside knowledge. If the passages do not contain the answer, reply exactly: \"Not found in the provided context.\"\nCite the passage ids you used in square brackets, e.g. [Art. 17(3)].\n\nPassages:\n{passages}\n\nQuestion: {question}\nAnswer:"
 }
