@@ -8,10 +8,10 @@ proposed answer labels,correct,baseline,0.1875,fraction,16
 proposed answer labels,wrong,baseline,0.0625,fraction,16
 proposed answer labels,unsupported,baseline,0.0625,fraction,16
 proposed answer labels,refused,baseline,0.5625,fraction,16
-latency,baseline_retrieval,baseline,5.533139375256724,ms,160
-latency,baseline_live_retrieval,baseline,170.49622500144324,ms,16
-latency,baseline_llm_wall_ms,baseline,5805.207650001648,ms,16
-latency,baseline_end_to_end_ms,baseline,5977.144481250434,ms,16
+latency,baseline_retrieval,baseline,9.412503750900214,ms,160
+latency,baseline_live_retrieval,baseline,114.22320000019681,ms,16
+latency,baseline_llm_wall_ms,baseline,6538.937193749916,ms,16
+latency,baseline_end_to_end_ms,baseline,6654.702575001465,ms,16
 retrieval quality,hit@3,rerank,0.5625,fraction,16
 retrieval quality,facts@3,rerank,0.5,fraction,16
 retrieval quality,sufficient@3,rerank,0.4375,fraction,16
@@ -21,13 +21,14 @@ proposed answer labels,correct,rerank,0.1875,fraction,16
 proposed answer labels,wrong,rerank,0.125,fraction,16
 proposed answer labels,unsupported,rerank,0.125,fraction,16
 proposed answer labels,refused,rerank,0.375,fraction,16
-latency,rerank_retrieval,rerank,22.093683749426418,ms,160
-latency,rerank_live_retrieval,rerank,389.95949999934965,ms,16
-latency,rerank_llm_wall_ms,rerank,6826.364093749362,ms,16
-latency,rerank_end_to_end_ms,rerank,7217.612749998807,ms,16
+latency,rerank_retrieval,rerank,29.840951876121835,ms,160
+latency,rerank_live_retrieval,rerank,183.8934625047841,ms,16
+latency,rerank_llm_wall_ms,rerank,7307.583649999287,ms,16
+latency,rerank_end_to_end_ms,rerank,7493.004762505734,ms,16
 candidate ceiling,facts@10,shared,0.6458333333333333,fraction,16
-latency,rerank_cost_isolated,rerank,16.560544374169694,ms,160
-latency,rerank_cost_live,rerank,219.4632749979064,ms,16
-latency,rerank_cost_live_share_of_end_to_end,rerank,3.0406629255350763,%,16
-scaling at 607,full_corpus_scoring,cross_encoder,473.7162999999782,ms,16
-scaling at 607,pair_throughput,cross_encoder,1281.357639583075,pairs/s,16
+latency,rerank_cost_isolated,rerank,20.42844812522162,ms,160
+latency,rerank_cost_live,rerank,52.07115624762082,ms,16
+latency,rerank_cost_live_share_of_end_to_end,rerank,0.6949302435810506,%,16
+latency,rerank_cost_live_share_of_end_to_end_gap,rerank,6.211501893206699,%,16
+scaling at 607,full_corpus_scoring,cross_encoder,520.5344750002041,ms,16
+scaling at 607,pair_throughput,cross_encoder,1166.1091227430459,pairs/s,16

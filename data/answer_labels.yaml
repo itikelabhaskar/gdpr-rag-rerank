@@ -5,7 +5,8 @@
 # these are assistant-proposed labels, not independent human grading; borderline calls are in note
 # second pass, 17 oct 2026: a blind relabel disagreed on 6 answers, re-decided with the same rules as the rest
 # changed: eval kt03 baseline + rerank (fact 1 -> missing), stress s05 rerank + s17 baseline (-> wrong, unsupported),
-# s19 rerank (fact 1 -> stated, still wrong via unsupported), s02 baseline (fact 2 -> stated). reasons are in each note
+# s19 rerank (fact 1 -> stated, still wrong via unsupported). s02 baseline was reviewed too and kept strict (both missing),
+# a dropped qualifier counts as missing here like everywhere else. reasons are in each note
 - set: eval
   query_id: kt01
   pipeline: baseline
@@ -446,12 +447,12 @@
   answer_sha: 91a715cc7b22
   facts:
   - missing
-  - stated
+  - missing
   unsupported: false
   refused: false
   truncated: false
   overall: incomplete
-  note: first copy being free is only implied, not stated; 'reasonable fee for copies beyond the first one' states the further-copies rule, administrative costs only explain what reasonable means
+  note: first copy being free is only implied, not stated; 'reasonable fee for copies beyond the first one' drops the administrative-cost basis, partial = missing like everywhere else (the rerank answer is weaker still, it drops reasonable too)
 - set: stress
   query_id: s03
   pipeline: baseline

@@ -16,7 +16,7 @@ ollama pull gemma2:9b-instruct-q4_K_M
 ```
 
 ollama has to be running. the notebook is committed with its outputs, so you can just read it. a full run takes about 5 minutes:
-the answers come from `results/answers.csv`, only the timing cells call the llm live.
+the answers come from `results/answers.csv`, only a one-line ollama check in setup and the timing cells call the llm live.
 
 ## what's where
 
@@ -36,11 +36,12 @@ results/           everything the notebook writes: csvs, figures/, run_info.json
 | baseline | 0.438 | 0.396 | 0.375 | 0.376 |
 | rerank | 0.562 | 0.500 | 0.438 | 0.594 |
 
-- the 10 candidates only hold 64.6% of the needed facts (6/16 questions miss one), rerank can't fix those
+- on average a question has only 64.6% of its needed facts anywhere in the 10 candidates (6/16 miss at least one), rerank can't fix those
 - answers, proposed labels not final yet: 3/16 fully correct for baseline, 3/16 for rerank
-- retrieval on its own: 5.5 ms -> 22.1 ms. inside the live requests the reranker added ~219 ms
-- end to end: 5.98 s -> 7.22 s. that gap is mostly longer prompts and answers, the reranker itself is ~3.0% of it
-- cross-encoder over all 607 chunks: ~474 ms per question. at 1M chunks that would be ~13 min (extrapolated, not run)
+- retrieval timed on its own: 9.4 ms -> 29.8 ms
+- end to end, live: 6.65 s -> 7.49 s. the reranker itself took ~52 ms of each rerank request,
+  6% of that 0.84 s gap. the rest is on the llm side, rerank answers ran longer (31 -> 50 output tokens on average)
+- cross-encoder over all 607 chunks: ~521 ms per question. at 1M chunks that would be ~14 min (extrapolated, not run)
 
 ![latency](results/figures/latency.png)
 
@@ -48,7 +49,7 @@ results/           everything the notebook writes: csvs, figures/, run_info.json
 
 - rtx 4070 laptop (8 gb), cuda 12.8. encoders on the gpu, faiss on the cpu. gemma2 doesn't fully fit next to everything else on the desktop,
   ollama ran it 24%/76% CPU/GPU, so generation is slower than on a bigger card
-- timings move between runs on this desktop, the csvs are from the last run. 5 of the 32 live timing answers came out slightly different from the cached ones, `latency_llm.csv` marks them
+- timings move between runs on this desktop, the csvs are from the last run. 4 of the 32 live timing answers came out slightly different from the cached ones, `latency_llm.csv` marks them
 - models: `sentence-transformers/msmarco-MiniLM-L6-cos-v5` @ `14ca9be4bbcf`, `cross-encoder/ms-marco-MiniLM-L6-v2` @ `233902d25c44`, `gemma2:9b-instruct-q4_K_M` (digest in run_info.json)
 - pdf: [original 2016 text](https://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1.0006.01/DOC_1), 88 pages, sha256 `bd84e63f5b622b73...`
 - left out of the corpus: the title + citations before the recitals, footnotes, and the closing line + signatures after art 99
