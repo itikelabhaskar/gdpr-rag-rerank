@@ -1,7 +1,8 @@
 # gdpr rag: bi-encoder vs cross-encoder rerank
 
 lma rag assignment. the same 607 gdpr chunks go through two pipelines: plain bi-encoder retrieval (top 10 -> top 3 -> llm), and the same
-top 10 rescored by a cross-encoder (-> top 3 -> llm). same llm, same prompt. everything is in `rag_rerank.ipynb`.
+top 10 rescored by a cross-encoder (-> top 3 -> llm). same llm, same prompt. everything is in `rag_rerank.ipynb`,
+and the 3 page write-up is [2023111032_RAG_Report.pdf](2023111032_RAG_Report.pdf).
 
 ## run
 
@@ -21,10 +22,11 @@ the answers come from `results/answers.csv`, only a one-line ollama check in set
 ## what's where
 
 ```text
-rag_rerank.ipynb   all the code + outputs
-requirements.txt   pinned packages
-data/              inputs: the gdpr pdf, eval + stress questions, answer labels
-results/           everything the notebook writes: csvs, figures/, run_info.json
+rag_rerank.ipynb           all the code + outputs
+2023111032_RAG_Report.pdf  the report
+requirements.txt           pinned packages
+data/                      inputs: the gdpr pdf, eval + stress questions, answer labels
+results/                   everything the notebook writes: csvs, figures/, run_info.json
 ```
 
 ## results
